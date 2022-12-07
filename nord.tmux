@@ -8,10 +8,8 @@
 # References:
 #   https://tmux.github.io
 
-if grep -q "ID=nixos" /etc/os-release
-then 
-    PATH="/run/wrappers/bin:${HOME}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:${HOME}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:${PATH}"
-fi
+# Modify $PATH to work on NixOS or any other OS
+PATH="/run/wrappers/bin:/home/${USER}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/home/${USER}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 NORD_TMUX_COLOR_THEME_FILE=src/nord.conf
 NORD_TMUX_VERSION=0.3.0
@@ -19,7 +17,8 @@ NORD_TMUX_STATUS_CONTENT_FILE="src/nord-status-content.conf"
 NORD_TMUX_STATUS_CONTENT_NO_PATCHED_FONT_FILE="src/nord-status-content-no-patched-font.conf"
 NORD_TMUX_STATUS_CONTENT_OPTION="@nord_tmux_show_status_content"
 NORD_TMUX_NO_PATCHED_FONT_OPTION="@nord_tmux_no_patched_font"
-_current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+_current_dir="${HOME}/.tmux/themes/nord-tmux"
+#_current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 __cleanup() {
   unset -v NORD_TMUX_COLOR_THEME_FILE NORD_TMUX_VERSION
