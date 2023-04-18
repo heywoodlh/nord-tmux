@@ -9,7 +9,7 @@
 #   https://tmux.github.io
 
 # Modify $PATH to work on NixOS or any other OS
-PATH="/run/wrappers/bin:/home/${USER}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/home/${USER}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATH="/opt/homebrew/bin:/run/wrappers/bin:/home/${USER}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/home/${USER}/.nix-profile/bin:/etc/profiles/per-user/${USER}/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 NORD_TMUX_COLOR_THEME_FILE=src/nord.conf
 NORD_TMUX_VERSION=0.3.0
